@@ -1,0 +1,47 @@
+type WithdrawReceipt = 
+ variant {
+   Err: WithdrawErr;
+   Ok: nat;
+ };
+type WithdrawErr = 
+ variant {
+   BalanceLow;
+   TransferFailure;
+ };
+type Self = 
+ service {
+   deposit: () -> (DepositReceipt);
+   getAllDailyProposals: () -> (vec MyProposal);
+   getAllProposals: () -> (vec MyProposal);
+   getCrowdfundData: () -> (Data);
+   getCrowdfundStatus: () -> (bool) query;
+   getDailyPendingProposalsCountById: (nat64) -> (nat);
+   getDailyProposalsCountById: (nat64) -> (nat);
+   getDepositAddress: () -> (blob);
+   getNProposalsById: (nat64) -> (nat);
+   getPendingProposals: () -> (vec MyProposal);
+   withdraw: (nat, principal) -> (WithdrawReceipt);
+ };
+type MyProposal = 
+ record {
+   _category: int32;
+   _creation: nat64;
+   _proposer: nat64;
+ };
+type DepositReceipt = 
+ variant {
+   Err: DepositErr;
+   Ok: nat;
+ };
+type DepositErr = 
+ variant {
+   BalanceLow;
+   TransferFailure;
+ };
+type Data = 
+ record {
+   balance: nat;
+   deposit: blob;
+   endDate: int;
+ };
+service : () -> Self

@@ -1,0 +1,39 @@
+{
+  "name": "Spammer DAO",
+  "version": "0.1.1",
+  "description": "Internet Computer starter application",
+  "keywords": [
+    "Internet Computer",
+    "Motoko",
+    "JavaScript",
+    "Canister"
+  ],
+  "scripts": {
+    "build": "parcel build src/frontend/src/index.html",
+    "prebuild": "npm run generate",
+    "start": "npm run dev",
+    "dev": "parcel src/frontend/src/index.html",
+    "predev": "dfx start --background --clean --emulator; dfx deploy backend; node setupEnv.js; npm run generate;",
+    "postdev": "dfx stop",
+    "generate": "dfx generate backend"
+  },
+  "devDependencies": {
+    "@dfinity/agent": "0.12.0",
+    "@dfinity/candid": "0.12.0",
+    "@dfinity/principal": "0.12.0",
+    "buffer": "^6.0.3",
+    "parcel": "^2.4.0",
+    "process": "^0.11.10"
+  },
+  "browserslist": [
+    "last 2 chrome version",
+    "last 2 firefox version",
+    "last 2 safari version",
+    "last 2 edge version"
+  ],
+  "dependencies": {
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "crc": "^4.1.0"
+  }
+}
