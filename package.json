@@ -13,7 +13,7 @@
     "prebuild": "npm run generate",
     "start": "npm run dev",
     "dev": "parcel src/frontend/src/index.html",
-    "predev": "dfx start --background --clean --emulator; dfx deploy backend; node setupEnv.js; npm run generate;",
+    "predev": "node setupEnv.js; npm run generate;",
     "postdev": "dfx stop",
     "generate": "dfx generate backend"
   },
