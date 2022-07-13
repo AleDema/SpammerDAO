@@ -5,7 +5,7 @@ import ShowStatus from "./ShowStatus";
 import ShowSuccess from "./ShowSuccess";
 
 const App = () => {
-  const [isCrowdfundMode, setCrowdfundMode] = React.useState(true);
+  const [isCrowdfundMode, setCrowdfundMode] = React.useState();
 
   const getResponse = async () => {
     console.log("test");
@@ -19,8 +19,7 @@ const App = () => {
   }, []);
 
   return (
-    <main>
-      <img src={logo} alt="DFINITY logo" />
+    <main className = "antialiased text-slate-500 dark:text-slate-400 bg-white dark:bg-slate-900 flex justify-center items-center h-screen flex-col">
       <React.Suspense fallback={<h1>Loading...</h1>}>
         {isCrowdfundMode ? (
           <ShowStatus></ShowStatus>

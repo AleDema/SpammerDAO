@@ -21,9 +21,12 @@
     "@dfinity/agent": "0.12.0",
     "@dfinity/candid": "0.12.0",
     "@dfinity/principal": "0.12.0",
+    "autoprefixer": "^10.4.7",
     "buffer": "^6.0.3",
     "parcel": "^2.4.0",
-    "process": "^0.11.10"
+    "postcss": "^8.4.14",
+    "process": "^0.11.10",
+    "tailwindcss": "^3.1.6"
   },
   "browserslist": [
     "last 2 chrome version",
@@ -32,8 +35,8 @@
     "last 2 edge version"
   ],
   "dependencies": {
+    "crc": "^4.1.0",
     "react": "^17.0.2",
-    "react-dom": "^17.0.2",
-    "crc": "^4.1.0"
+    "react-dom": "^17.0.2"
   }
 }

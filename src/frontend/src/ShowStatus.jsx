@@ -25,12 +25,17 @@ export default function ShowStatus() {
     getResponse();
   }, []);
 
+
+  const processDeposit = ()=> {
+
+  }
+
   return (
     <>
       {/* <div>{timeLeft}</div> */}
-      <div>{moneyRaised}</div>
-      <div>{deposit}</div>
-      <div>deposit</div>
+      <div className = "text-green-500 font-sans">Money raised: {moneyRaised}</div>
+      <div className = "text-green-500 font-sans">Deposit address: {deposit}</div>
+      <button className="rounded-md bg-gradient-to-r from-green-400 to-blue-500 hover:from-pink-500 hover:to-yellow-500" onClick={processDeposit}>Deposit</button>
     </>
   );
 }
